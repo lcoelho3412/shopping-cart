@@ -30,8 +30,14 @@ const createProductItemElement = ({ sku, name, image }) => {
 
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
+/* btnClear.addEventListener('click', () => {
+  olCartItems.innerHTML = '';
+  totalPrice.innerText = '';
+  });  */
+
 const cartItemClickListener = (event) => {
   // coloque seu código aqui
+  //somente o ato de remover requisito 5
 };
 
 /* recebe o query e cria um objeto a partir retorno do fetchProduct  */

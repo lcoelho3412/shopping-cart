@@ -5,8 +5,7 @@ const computadorSearch = require('../mocks/search');
 describe('1 - Teste a função fetchProducts', () => {
   // implemente seus testes aqui
   it('Testa se fetchProducts é uma função', () => {
-    expect.assertions(1);
-    expect(typeof fetchProducts === 'function').toEqual(true);
+    expect(typeof fetchProducts).toEqual('function')
   })
 
   it('Testa se "fetch" é chamado quando fetchProducts recebe um argumento', async () => {
@@ -20,9 +19,8 @@ describe('1 - Teste a função fetchProducts', () => {
   })
 
   it('Testa se ao chamar a função fetchProducts sem argumento retorna mensagem de erro', async () =>{
-    /* await expect(fetchProducts()).rejects.toMatch('You must provide an url') */
     try {
-      const qualquer = await fetchProducts()
+      await fetchProducts()
       
     } catch (error) {
       expect(error).toBe('You must provide an url')
@@ -30,5 +28,3 @@ describe('1 - Teste a função fetchProducts', () => {
     }
   })
 });
-
-/* Teste se, ao chamar a função fetchProducts sem argumento, retorna um erro com a mensagem: 'You must provide an url'. */
