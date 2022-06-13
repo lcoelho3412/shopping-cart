@@ -37,7 +37,7 @@ const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').inn
 
 const cartItemClickListener = (event) => {
   // coloque seu código aqui
-  //somente o ato de remover requisito 5
+  // somente o ato de remover requisito 5
 };
 
 /* recebe o query e cria um objeto a partir retorno do fetchProduct  */
