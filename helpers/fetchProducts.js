@@ -1,5 +1,4 @@
  const fetchProducts = async (productSearch) => {
-  // seu código aqui
   try {
     const ENDPOINT = `https://api.mercadolibre.com/sites/MLB/search?q=${productSearch}`;
   
