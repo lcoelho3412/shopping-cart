@@ -1,6 +1,7 @@
 /* const { fetchProducts } = require('./helpers/fetchProducts'); */
 
 const sectionIAmYourFather = document.querySelector('.items');
+/* const addToCartBttn = document.querySelector('.item__add'); */
 
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
@@ -29,18 +30,11 @@ const createProductItemElement = ({ sku, name, image }) => {
 };
 
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
-
-/* btnClear.addEventListener('click', () => {
-  olCartItems.innerHTML = '';
-  totalPrice.innerText = '';
-  });  */
-
+ 
 const cartItemClickListener = (event) => {
-  // coloque seu código aqui
-  // somente o ato de remover requisito 5
+  
 };
 
-/* recebe o query e cria um objeto a partir retorno do fetchProduct  */
 const addProducts = async (product) => {
   const resultFromFetchFunc = await fetchProducts(product);
   return resultFromFetchFunc.results.forEach((key) => {
