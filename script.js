@@ -1,7 +1,6 @@
-/* const { fetchProducts } = require('./helpers/fetchProducts'); */
+const { fetchProducts } = require('./helpers/fetchProducts');
 
 const sectionIAmYourFather = document.querySelector('.items');
-/* const addToCartBttn = document.querySelector('.item__add'); */
 
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
