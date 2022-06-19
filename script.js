@@ -1,4 +1,4 @@
-const { fetchProducts } = require('./helpers/fetchProducts');
+/* const { fetchProducts } = require('./helpers/fetchProducts'); */
 
 const sectionIAmYourFather = document.querySelector('.items');
 
@@ -31,7 +31,8 @@ const createProductItemElement = ({ sku, name, image }) => {
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
  
 const cartItemClickListener = (event) => {
-  
+  event.target.remove();
+  saveCartItems((document.querySelector('.cart__items')[0]).innerHTML);
 };
 
 const addProducts = async (product) => {
@@ -55,6 +56,15 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   return li;
 };
 
-window.onload = () => { 
-  addProducts('computador');
+const emptyCart = () => {
+  const emptyCartButton = document.querySelector('.empty-cart')[0];
+  emptyCartButton.addEventListener('click', () => {
+    const cart = [...document.querySelector('.cart__items')[0].children];
+    cart.forEach((item) => item.remove());
+  });
+};
+
+window.onload = async () => { 
+  await addProducts('computador');
+  emptyCart();
 };
