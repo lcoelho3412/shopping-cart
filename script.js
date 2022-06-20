@@ -1,9 +1,5 @@
-/* const { fetchProducts } = require('./helpers/fetchProducts'); */
-
-/* const { fetchItem } = require("./helpers/fetchItem"); */
-
 const sectionIAmYourFather = document.querySelector('.items');
-const sectionOl = document.querySelector('.empty__cart');
+const sectionOl = document.querySelector('.cart__items');
 const trashCollector = document.querySelector('.empty-cart');
 
 const createProductImageElement = (imageSource) => {
@@ -80,13 +76,14 @@ const addProduct = async () => {
 };
 
 const emptyCart = () => {
-  sectionOl.innerHTML = '';
-  localStorage.clear();
+  trashCollector.addEventListener('click', () => {
+    sectionOl.innerHTML = '';
+    localStorage.clear();
+  });
 };
-
-trashCollector.addEventListener('click', emptyCart);
 
 window.onload = async () => {
   await addProducts('computador');
-  await addProduct();
+  addProduct();
+  emptyCart();
 };
