@@ -1,5 +1,5 @@
-const fetchItem = async (barcode) => {
-  const ENDPOINT = `https://api.mercadolibre.com/sites/MLB/search?q=${barcode}`;
+const fetchItem = async (ItemID) => {
+  const ENDPOINT = `https://api.mercadolibre.com/items/${ItemID}`;
   try {
     const response = await fetch(ENDPOINT);
     const results = await response.json();
