@@ -82,8 +82,27 @@ const emptyCart = () => {
   });
 };
 
+const loadingMessage = () => {
+  const container = document.querySelector('.items');
+  const loading = document.createElement('div');
+
+  loading.className = 'loading';
+  loading.innerText = 'carregando...';
+  container.appendChild(loading);
+};
+
+loadingMessage();
+
+const removeLoadingMessage = () => {
+  const load = document.querySelector('.loading');
+
+  load.remove();
+};
+
 window.onload = async () => {
+  loadingMessage();
   await addProducts('computador');
   addProduct();
   emptyCart();
+  removeLoadingMessage();
 };
