@@ -95,12 +95,10 @@ loadingMessage();
 
 const removeLoadingMessage = () => {
   const load = document.querySelector('.loading');
-
   load.remove();
 };
 
 window.onload = async () => {
-  loadingMessage();
   await addProducts('computador');
   addProduct();
   emptyCart();
